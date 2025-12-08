@@ -7,72 +7,158 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Про проект Bookerino</h1>
-    <nav>
-      <a href="index.html">Головна</a>
-      <a href="#logic">Бізнес-логіка</a>
-      <a href="#requirements">Вимоги</a>
-    </nav>
+  <header class="topbar">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Bookerino logo">
+    </div>
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1 0 14.5 15l.27.28v.79l4.25 4.25 1.49-1.49L15.5 14Zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14Z" />
+      </svg>
+      <input type="text" placeholder="Search" aria-label="Пошук">
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn" aria-label="Профіль">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-3.33 0-7 1.67-7 5v1h14v-1c0-3.33-3.67-5-7-5Z"/>
+        </svg>
+      </button>
+      <button class="icon-btn" aria-label="Обране">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 21s-6.5-4.35-9-9a5.25 5.25 0 0 1 9-4 5.25 5.25 0 0 1 9 4c-2.5 4.65-9 9-9 9Z"/>
+        </svg>
+      </button>
+      <button class="icon-btn" aria-label="Кошик">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 4h10l1 4H6l1-4Zm-1 6h12v8H6v-8Zm2 2v4h2v-4H8Zm4 0v4h2v-4h-2Z"/>
+        </svg>
+      </button>
+    </div>
   </header>
 
-  <main>
-    <section id="domain">
-      <h2>Предметна область</h2>
-      <p>
-        Bookerino — це онлайн-магазин книжок, який дозволяє користувачам зручно переглядати каталог книг та аксесуарів,
-        робити замовлення онлайн та отримувати доставку в приємні терміни.
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Каталог</a></li>
+      <li><a href="about.html">Про нас</a></li>
+      <li><a href="#requirements">Вимоги</a></li>
+      <li><a href="#links">Посилання</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-container">
+    <section class="about-hero">
+      <p class="eyebrow">Про проект</p>
+      <h1>Bookerino</h1>
+      <p class="lead">
+        Онлайн-магазин книг із сучасним каталогом, швидкою доставкою та сервісом,
+        що допомагає знаходити ідеальне читання.
       </p>
-      <p>
-        Основна мета магазину — надати покупцям швидкий та якісний сервіс з широким вибором книг та зручним пошуком.
-      </p>
+      <div class="chip-row">
+        <span class="pill pill-soft">Каталог</span>
+        <span class="pill pill-soft">Доставка 2 год</span>
+        <span class="pill pill-soft">Відгуки</span>
+      </div>
     </section>
 
-    <section id="logic">
-      <h2>Бізнес-логіка (сценарій)</h2>
-      <ol>
-        <li>Користувач відкриває сайт.</li>
-        <li>Переглядає каталог книг та аксесуарів до них.</li>
-        <li>Вибирає потрібні товари.</li>
-        <li>Заповнює форму замовлення.</li>
-        <li>Отримує підтвердження замовлення від менеджера.</li>
-        <li>Кур'єр доставляє замовлення клієнту у вказаний час.</li>
-        <li>Користувач залишає відгук про якість обслуговування.</li>
-      </ol>
+    <section id="domain" class="section-shell">
+      <div class="about-card">
+        <h2>Предметна область</h2>
+        <p>
+          Bookerino — це онлайн-магазин книжок, який дозволяє користувачам зручно переглядати каталог книг та аксесуарів,
+          робити замовлення онлайн та отримувати доставку в приємні терміни.
+        </p>
+        <p>
+          Основна мета магазину — надати покупцям швидкий та якісний сервіс з широким вибором книг та зручним пошуком.
+        </p>
+      </div>
     </section>
 
-
-    <section id="requirements">
-      <h2>Функціональні вимоги</h2>
-      <ul>
-        <li>Перегляд каталогу з описами та цінами.</li>
-        <li>Відображення сторінки деталей товару.</li>
-        <li>Форма для оформлення замовлення.</li>
-        <li>Можливість залишити відгук.</li>
-        <li>Розділи "Про нас" та "Контакти".</li>
-      </ul>
-
-      <h2>Нефункціональні вимоги</h2>
-      <ul>
-        <li>Адаптивний дизайн для різних пристроїв.</li>
-        <li>Завантаження сторінки не більше 3 секунд.</li>
-        <li>Підтримка сучасних браузерів (Chrome, Firefox, Edge, Safari).</li>
-        <li>Зрозумілий інтерфейс та приємний дизайн.</li>
-      </ul>
+    <section id="logic" class="section-shell">
+      <div class="about-card">
+        <h2>Бізнес-логіка (сценарій)</h2>
+        <ol class="numbered-list">
+          <li>Користувач відкриває сайт.</li>
+          <li>Переглядає каталог книг та аксесуарів до них.</li>
+          <li>Вибирає потрібні товари.</li>
+          <li>Заповнює форму замовлення.</li>
+          <li>Отримує підтвердження замовлення від менеджера.</li>
+          <li>Кур'єр доставляє замовлення клієнту у вказаний час.</li>
+          <li>Користувач залишає відгук про якість обслуговування.</li>
+        </ol>
+      </div>
     </section>
 
-    <section id="links">
-      <h2>Посилання на проекти</h2>
-      <ul>
-        <li><a href="index.html">Головна сторінка Bookerino</a></li>
-        <li><a href="https://github.com/Somnovem/IO-35_appWEB-ZhmuraArtem-FIOT-2025">Репозиторій на GitHub</a></li>
-        <li><a href="https://somnovem.github.io/IO-35_appWEB-ZhmuraArtem-FIOT-2025">Жива сторінка (GitHub Pages)</a></li>
-      </ul>
+    <section id="requirements" class="section-shell">
+      <div class="split-grid">
+        <div class="about-card">
+          <h2>Функціональні вимоги</h2>
+          <ul class="fancy-list">
+            <li>Перегляд каталогу з описами та цінами.</li>
+            <li>Відображення сторінки деталей товару.</li>
+            <li>Форма для оформлення замовлення.</li>
+            <li>Можливість залишити відгук.</li>
+            <li>Розділи "Про нас" та "Контакти".</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <h2>Нефункціональні вимоги</h2>
+          <ul class="fancy-list">
+            <li>Адаптивний дизайн для різних пристроїв.</li>
+            <li>Завантаження сторінки не більше 3 секунд.</li>
+            <li>Підтримка сучасних браузерів (Chrome, Firefox, Edge, Safari).</li>
+            <li>Зрозумілий інтерфейс та приємний дизайн.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="links" class="section-shell">
+      <div class="about-card">
+        <h2>Посилання на проекти</h2>
+        <ul class="link-list">
+          <li><a href="index.html" class="link-item">Головна сторінка Bookerino</a></li>
+          <li><a href="https://github.com/Somnovem/IO-35_appWEB-ZhmuraArtem-FIOT-2025" class="link-item">Репозиторій на GitHub</a></li>
+          <li><a href="https://somnovem.github.io/IO-35_appWEB-ZhmuraArtem-FIOT-2025" class="link-item">Жива сторінка (GitHub Pages)</a></li>
+          <li><a href="https://www.figma.com/design/Dv55PF6IWNRbL4ZK8x4fOg/Untitled" class="link-item">Макет в Figma</a></li>
+        </ul>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Bookerino</p>
+  <footer id="contacts">
+    <section class="footer-left">
+      <div class="logo">
+        <img src="assets/images/logo.png" alt="Bookerino logo">
+      </div>
+      <p>© 2025 Bookerino</p>
+    </section>
+    <section class="footer-right">
+      <h3 class="footer-content-box-header">
+        Контакти
+      </h3>
+      <div class="footer-content-box">
+        <p>+38 (095) 000 00 00</p>
+        <p>+38 (097) 000 00 00</p>
+        <p>Працюємо щодня</p>
+      </div>
+      <h3 class="footer-content-box-header">
+        Інформація
+      </h3>
+      <div class="footer-content-box">
+        <p>Про нас</p>
+        <p>Хіти продажу</p>
+        <p>Відгуки</p>
+        <p>Доставка і оплата</p>
+      </div>
+      <h3 class="footer-content-box-header">
+        Каталог
+      </h3>
+      <div class="footer-content-box">
+        <p>Створи свій набір</p>
+        <p>Художня література</p>
+        <p>Нон-фікшн</p>
+      </div>
+    </section>
   </footer>
 </body>
 </html>

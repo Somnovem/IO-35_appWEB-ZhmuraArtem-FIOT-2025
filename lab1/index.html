@@ -8,29 +8,66 @@
 </head>
 <body>
   <!-- ШАПКА -->
-  <header>
+  <header class="topbar">
     <div class="logo">
       <img src="assets/images/logo.png" alt="Bookerino logo">
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Каталог</a></li>
-        <li><a href="about.html">Про нас</a></li>
-        <li><a href="#custom">Збери набір</a></li>
-        <li><a href="#contacts">Контакти</a></li>
-      </ul>
-    </nav>
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1 0 14.5 15l.27.28v.79l4.25 4.25 1.49-1.49L15.5 14Zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14Z" />
+      </svg>
+      <input type="text" placeholder="Search" aria-label="Пошук">
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn" aria-label="Профіль">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-3.33 0-7 1.67-7 5v1h14v-1c0-3.33-3.67-5-7-5Z"/>
+        </svg>
+      </button>
+      <button class="icon-btn" aria-label="Обране">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 21s-6.5-4.35-9-9a5.25 5.25 0 0 1 9-4 5.25 5.25 0 0 1 9 4c-2.5 4.65-9 9-9 9Z"/>
+        </svg>
+      </button>
+      <button class="icon-btn" aria-label="Кошик">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 4h10l1 4H6l1-4Zm-1 6h12v8H6v-8Zm2 2v4h2v-4H8Zm4 0v4h2v-4h-2Z"/>
+        </svg>
+      </button>
+    </div>
   </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Каталог</a></li>
+      <li><a href="about.html">Про нас</a></li>
+      <li><a href="#custom">Збери набір</a></li>
+      <li><a href="#contacts">Контакти</a></li>
+    </ul>
+  </nav>
 
   <main>
     <!-- HERO БЛОК -->
-    <section id="hero">
+    <section id="hero" class="banner">
       <div class="hero-text">
-        <h2>Новинка: роман "Конотопська відьма"</h2>
-        <p>Зворушлива історія про пошук любові й сенсу життя. Чудовий подарунок для тих, хто цінує теплі й емоційні історії.</p>
+        <p class="eyebrow">Особлива пропозиція</p>
+        <h2>
+          <span class="accent">25% знижка</span>
+          <br>
+          <span style="color: #fff">на всі книги Брендона Сандерсона!</span> 
+        </h2>
+        <p>Встигніть замовити улюблені книги з вигодою та швидкою доставкою.</p>
+        <div class="hero-actions">
+          <button class="primary-btn">Замовити зараз</button>
+          <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
       </div>
       <div class="hero-image">
-        <img src="assets/images/book_1.png" alt="Обкладинка книги">
+        <img src="assets/images/book_cart4.png" alt="Обкладинка книги">
       </div>
     </section>
 
@@ -80,6 +117,52 @@
           <img src="assets/images/gift.png" alt="Подарункові набори">
           <p>Набори книг для друзів та сім'ї</p>
         </div>
+      </div>
+    </section>
+
+    <!-- BEST SELLER -->
+    <section id="best-seller">
+      <div class="section-header">
+        <h2>Бестселери</h2>
+        <a class="view-all" href="#catalog">View All</a>
+      </div>
+      <div class="book-grid">
+        <article class="book-card">
+          <div class="book-cover"><img src="assets/images/book_cart1.png" alt="Ненавиджу тебе кохати"></div>
+          <h3>Ненавиджу тебе кохати</h3>
+          <p class="author">Романтика</p>
+          <div class="price">445 ₴</div>
+        </article>
+        <article class="book-card">
+          <div class="book-cover"><img src="assets/images/book_cart2.png" alt="Емілі Вайлд"></div>
+          <h3>Емілі Вайлд</h3>
+          <p class="author">Літня історія</p>
+          <div class="price">450 ₴</div>
+        </article>
+        <article class="book-card">
+          <div class="book-cover"><img src="assets/images/book_cart3.png" alt="Цирцея"></div>
+          <h3>Цирцея</h3>
+          <p class="author">Поетична збірка</p>
+          <div class="price">455 ₴</div>
+        </article>
+        <article class="book-card">
+          <div class="book-cover"><img src="assets/images/book_cart4.png" alt="Тресс зі смарагдового моря"></div>
+          <h3>Тресс зі смарагдового моря</h3>
+          <p class="author">Фантастика</p>
+          <div class="price">455 ₴</div>
+        </article>
+        <article class="book-card">
+          <div class="book-cover"><img src="assets/images/book_cart5.png" alt="Прокляття справжнього кохання"></div>
+          <h3>Прокляття справжнього кохання</h3>
+          <p class="author">Сучасна проза</p>
+          <div class="price">460 ₴</div>
+        </article>
+        <article class="book-card">
+          <div class="book-cover"><img src="assets/images/book_cart6.png" alt="Невеличка драма"></div>
+          <h3>Невеличка драма</h3>
+          <p class="author">Класика</p>
+          <div class="price">465 ₴</div>
+        </article>
       </div>
     </section>
 
@@ -134,6 +217,58 @@
           </tr>
         </tbody>
       </table>
+    </section>
+
+    <!-- ДОДАТКОВА ІНФОРМАЦІЯ -->
+    <section id="shipping" class="info-section">
+      <div class="section-header">
+        <h2>Доставка та оплата</h2>
+      </div>
+      <div class="info-grid">
+        <div class="info-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Спосіб</th>
+                <th>Термін</th>
+                <th>Вартість</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Кур'єр по місту</td>
+                <td>до 2 годин</td>
+                <td>0 ₴ від 800 ₴, інакше 70 ₴</td>
+              </tr>
+              <tr>
+                <td>Нова Пошта</td>
+                <td>1–2 дні</td>
+                <td>за тарифами перевізника</td>
+              </tr>
+              <tr>
+                <td>Самовивіз</td>
+                <td>сьогодні з 10:00</td>
+                <td>безкоштовно</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info-list">
+          <h3>Що варто знати</h3>
+          <ul class="fancy-list">
+            <li>Повернення — протягом 14 днів за наявності чека.</li>
+            <li>Кожна книга пакується в захисний рукав.</li>
+            <li>Є подарункова упаковка та листівка безкоштовно.</li>
+            <li>Статус замовлення — у вашому профілі.</li>
+          </ul>
+          <h3>Способи оплати</h3>
+          <ul class="fancy-list">
+            <li>Apple Pay / Google Pay</li>
+            <li>Банківська картка (Visa/Mastercard)</li>
+            <li>Готівкою чи картою при отриманні</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- ВІДГУКИ -->
