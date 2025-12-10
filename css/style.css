@@ -749,6 +749,58 @@ section h2 {
   box-shadow: 0 16px 34px rgba(67, 54, 196, 0.4);
 }
 
+/* TEAM SECTION */
+.team-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 48px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.team-content h2 {
+  margin: 0 0 20px;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.team-content p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.team-content p:last-child {
+  margin-bottom: 0;
+}
+
+.team-image-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(31, 41, 115, 0.2);
+}
+
+.team-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.team-image:hover {
+  transform: scale(1.02);
+}
+
 /* FOOTER */
 footer {
   margin-top: 40px;
@@ -839,6 +891,16 @@ section {
 
   .chip-row {
     gap: 6px;
+  }
+
+  .team-section {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px;
+  }
+
+  .team-content h2 {
+    font-size: 28px;
   }
 }
 
