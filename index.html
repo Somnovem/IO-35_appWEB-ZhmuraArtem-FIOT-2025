@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bookerino — Головна</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/index.js" defer></script>
 </head>
 <body>
   <!-- ШАПКА -->
@@ -12,11 +13,18 @@
     <div class="logo">
       <img src="assets/images/logo.png" alt="Bookerino logo">
     </div>
-    <div class="search-bar">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1 0 14.5 15l.27.28v.79l4.25 4.25 1.49-1.49L15.5 14Zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14Z" />
-      </svg>
-      <input type="text" placeholder="Search" aria-label="Пошук">
+    <div class="search-container">
+      <button class="burger-menu-toggle" aria-label="Відкрити меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="search-bar">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1 0 14.5 15l.27.28v.79l4.25 4.25 1.49-1.49L15.5 14Zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14Z" />
+        </svg>
+        <input type="text" placeholder="Search" aria-label="Пошук">
+      </div>
     </div>
     <div class="top-actions">
       <button class="icon-btn" aria-label="Профіль">
@@ -38,7 +46,7 @@
   </header>
 
   <nav class="main-nav">
-    <ul>
+    <ul class="nav-menu">
       <li><a href="index.html">Каталог</a></li>
       <li><a href="about.html">Про нас</a></li>
       <li><a href="#custom">Збери набір</a></li>
