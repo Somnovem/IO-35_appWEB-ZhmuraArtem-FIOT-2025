@@ -6,6 +6,8 @@
   <title>Bookerino — Головна</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/index.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/homepage-cart.js" defer></script>
 </head>
 <body>
   <!-- ШАПКА -->
@@ -37,19 +39,20 @@
           <path d="M12 21s-6.5-4.35-9-9a5.25 5.25 0 0 1 9-4 5.25 5.25 0 0 1 9 4c-2.5 4.65-9 9-9 9Z"/>
         </svg>
       </button>
-      <button class="icon-btn" aria-label="Кошик">
+      <button class="icon-btn cart-btn" aria-label="Кошик" id="cart-btn">
         <svg viewBox="0 0 24 24">
           <path d="M7 4h10l1 4H6l1-4Zm-1 6h12v8H6v-8Zm2 2v4h2v-4H8Zm4 0v4h2v-4h-2Z"/>
         </svg>
+        <span class="cart-count" id="cart-count">0</span>
       </button>
     </div>
   </header>
 
   <nav class="main-nav">
     <ul class="nav-menu">
-      <li><a href="index.html">Каталог</a></li>
+      <li><a href="index.html">Головна</a></li>
+      <li><a href="catalogue.html">Каталог</a></li>
       <li><a href="about.html">Про нас</a></li>
-      <li><a href="#custom">Збери набір</a></li>
       <li><a href="#contacts">Контакти</a></li>
     </ul>
   </nav>
@@ -132,7 +135,7 @@
     <section id="best-seller">
       <div class="section-header">
         <h2>Бестселери</h2>
-        <a class="view-all" href="#catalog">View All</a>
+        <a class="view-all" href="catalogue.html">View All</a>
       </div>
       <div class="book-grid">
         <article class="book-card">
@@ -327,6 +330,25 @@
       </form>
     </section>
   </main>
+
+  <!-- КОШИК (МОДАЛЬНЕ ВІКНО) -->
+  <div id="cart-modal" class="cart-modal">
+    <div class="cart-modal-content">
+      <div class="cart-header">
+        <h2>Кошик</h2>
+        <button class="close-btn" id="close-cart">&times;</button>
+      </div>
+      <div id="cart-items" class="cart-items">
+        <!-- Cart items will be dynamically inserted here -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <strong>Всього: <span id="cart-total">0</span> ₴</strong>
+        </div>
+        <button id="checkout-btn" class="primary-btn">Оформити замовлення</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ФУТЕР -->
   <footer id="contacts">

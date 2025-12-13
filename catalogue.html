@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог — Bookerino</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/catalogue.js" defer></script>
+  <script src="js/cart.js" defer></script>
+</head>
+<body>
+  <!-- ШАПКА -->
+  <header class="topbar">
+    <div class="logo">
+      <a href="index.html"><img src="assets/images/logo.png" alt="Bookerino logo"></a>
+    </div>
+    <div class="search-container">
+      <button class="burger-menu-toggle" aria-label="Відкрити меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="search-bar">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1 0 14.5 15l.27.28v.79l4.25 4.25 1.49-1.49L15.5 14Zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14Z" />
+        </svg>
+        <input type="text" id="search-input" placeholder="Пошук книг..." aria-label="Пошук">
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn" aria-label="Профіль">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-3.33 0-7 1.67-7 5v1h14v-1c0-3.33-3.67-5-7-5Z"/>
+        </svg>
+      </button>
+      <button class="icon-btn" aria-label="Обране">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 21s-6.5-4.35-9-9a5.25 5.25 0 0 1 9-4 5.25 5.25 0 0 1 9 4c-2.5 4.65-9 9-9 9Z"/>
+        </svg>
+      </button>
+      <button class="icon-btn cart-btn" aria-label="Кошик" id="cart-btn">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 4h10l1 4H6l1-4Zm-1 6h12v8H6v-8Zm2 2v4h2v-4H8Zm4 0v4h2v-4h-2Z"/>
+        </svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <ul class="nav-menu">
+      <li><a href="index.html">Головна</a></li>
+      <li><a href="catalogue.html">Каталог</a></li>
+      <li><a href="about.html">Про нас</a></li>
+      <li><a href="#contacts">Контакти</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- ФІЛЬТРИ ТА СОРТУВАННЯ -->
+    <section id="catalogue-filters" class="catalogue-controls">
+      <div class="filters-container">
+        <div class="filter-group">
+          <label for="sort-select">Сортувати за:</label>
+          <select id="sort-select" class="filter-select">
+            <option value="default">За замовчуванням</option>
+            <option value="price-asc">Ціна: від низької до високої</option>
+            <option value="price-desc">Ціна: від високої до низької</option>
+            <option value="name-asc">Назва: А-Я</option>
+            <option value="name-desc">Назва: Я-А</option>
+            <option value="year-asc">Рік: від старого до нового</option>
+            <option value="year-desc">Рік: від нового до старого</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="name-filter">Фільтр за назвою:</label>
+          <input type="text" id="name-filter" class="filter-input" placeholder="Введіть назву книги...">
+        </div>
+        <div class="filter-group">
+          <label for="year-filter">Фільтр за роком:</label>
+          <input type="number" id="year-filter" class="filter-input" placeholder="Рік видання" min="1900" max="2025">
+        </div>
+        <button id="clear-filters" class="clear-btn">Очистити фільтри</button>
+      </div>
+      <div class="results-info">
+        <span id="results-count">Знайдено книг: <strong>0</strong></span>
+      </div>
+    </section>
+
+    <!-- КАТАЛОГ КНИГ -->
+    <section id="catalogue">
+      <h2>Каталог книг</h2>
+      <div id="books-grid" class="book-grid">
+        <!-- Books will be dynamically inserted here -->
+      </div>
+      <div id="no-results" class="no-results" style="display: none;">
+        <p>Книг не знайдено. Спробуйте змінити фільтри.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- КОШИК (МОДАЛЬНЕ ВІКНО) -->
+  <div id="cart-modal" class="cart-modal">
+    <div class="cart-modal-content">
+      <div class="cart-header">
+        <h2>Кошик</h2>
+        <button class="close-btn" id="close-cart">&times;</button>
+      </div>
+      <div id="cart-items" class="cart-items">
+        <!-- Cart items will be dynamically inserted here -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <strong>Всього: <span id="cart-total">0</span> ₴</strong>
+        </div>
+        <button id="checkout-btn" class="primary-btn">Оформити замовлення</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ФУТЕР -->
+  <footer id="contacts">
+    <section class="footer-left">
+      <div class="logo">
+        <img src="assets/images/logo.png" alt="Bookerino logo">
+      </div>
+      <p>© 2025 Bookerino</p>
+    </section>
+    <section class="footer-right">
+      <h3 class="footer-content-box-header">
+        Контакти
+      </h3>
+      <div class="footer-content-box">
+        <p>+38 (095) 000 00 00</p>
+        <p>+38 (097) 000 00 00</p>
+        <p>Працюємо щодня</p>
+      </div>
+      <h3 class="footer-content-box-header">
+        Інформація
+      </h3>
+      <div class="footer-content-box">
+        <p>Про нас</p>
+        <p>Хіти продажу</p>
+        <p>Відгуки</p>
+        <p>Доставка і оплата</p>
+      </div>
+      <h3 class="footer-content-box-header">
+        Каталог
+      </h3>
+      <div class="footer-content-box">
+        <p>Створи свій набір</p>
+        <p>Художня література</p>
+        <p>Нон-фікшн</p>
+      </div>
+    </section>
+  </footer>
+</body>
+</html>
+
